@@ -64,7 +64,7 @@ npm start
 ---
 
 ## 📽 Demo Video  
-Watch the 5-minute demo ➡️ 
+Watch the 5-minute demo ➡️ https://youtu.be/4pmgqwvopk0?si=_wwcdwug8X_eIue-
 
 ---
 
