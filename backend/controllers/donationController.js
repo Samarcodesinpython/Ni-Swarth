@@ -2,7 +2,7 @@
 import Donation from '../models/Donation.js';
 
 // Create a new donation
-export const createDonation = async (req, res) => {
+const createDonation = async (req, res) => {
     try {
         const newDonation = new Donation(req.body);
         const savedDonation = await newDonation.save();
@@ -13,7 +13,7 @@ export const createDonation = async (req, res) => {
 };
 
 // Get all donations
-export const getAllDonations = async (req, res) => {
+const getAllDonations = async (req, res) => {
     try {
         const donations = await Donation.find();
         res.status(200).json(donations);
@@ -23,7 +23,7 @@ export const getAllDonations = async (req, res) => {
 };
 
 // Get a single donation by ID
-export const getDonationById = async (req, res) => {
+const getDonationById = async (req, res) => {
     try {
         const donation = await Donation.findById(req.params.id);
         if (!donation) {
@@ -36,7 +36,7 @@ export const getDonationById = async (req, res) => {
 };
 
 // Update a donation by ID
-export const updateDonation = async (req, res) => {
+const updateDonation = async (req, res) => {
     try {
         const updatedDonation = await Donation.findByIdAndUpdate(
             req.params.id,
@@ -53,7 +53,7 @@ export const updateDonation = async (req, res) => {
 };
 
 // Delete a donation by ID
-export const deleteDonation = async (req, res) => {
+const deleteDonation = async (req, res) => {
     try {
         const deletedDonation = await Donation.findByIdAndDelete(req.params.id);
         if (!deletedDonation) {
@@ -64,3 +64,57 @@ export const deleteDonation = async (req, res) => {
         res.status(500).json({ message: 'Failed to delete donation', error: error.message });
     }
 };
+
+const updateDonationStatus = async (req, res) => {
+    console.log('🟢 PATCH /donations/:id/status called');
+
+    try {
+        const { status, userId, notes } = req.body;
+
+        console.log(`Updating donation status for ID: ${req.params.id}`);  // Add this
+        console.log(`Request body: ${JSON.stringify(req.body)}`);        // And this
+
+        const donation = await Donation.findById(req.params.id);
+        if (!donation) {
+            console.log(`Donation not found with ID: ${req.params.id}`); // And this
+            return res.status(404).json({ message: 'Donation not found' });
+        }
+
+        donation.status = status;
+
+        if (status === 'accepted') {
+            donation.acceptedBy = userId;
+            donation.acceptanceNotes = notes;
+            donation.acceptedAt = new Date();
+        }
+
+        if (status === 'picked') {
+            donation.pickedUpBy = userId;
+            donation.pickupNotes = notes;
+            donation.pickedUpAt = new Date();
+        }
+
+        if (status === 'delivered') {
+            donation.deliveredBy = userId;
+            donation.deliveryNotes = notes;
+            donation.deliveredAt = new Date();
+        }
+
+        await donation.save();
+        res.status(200).json(donation);
+    } catch (error) {
+        console.error('Error updating donation status:', error);  // And this
+        res.status(500).json({ message: 'Failed to update donation status', error: error.message });
+    }
+};
+
+  export {
+    createDonation,
+    getAllDonations,
+    getDonationById,
+    updateDonation,
+    deleteDonation,
+    updateDonationStatus
+  };
+  
+  

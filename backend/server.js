@@ -18,7 +18,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // Use donation routes
-app.use('/api', donationRoutes);
+app.use('/donations', donationRoutes);
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
