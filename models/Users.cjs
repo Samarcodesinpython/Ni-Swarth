@@ -1,10 +1,10 @@
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
 
-const UsersSchema = new mongoose.Schema({
+const UserSchema = new mongoose.Schema({
     name: String,
     email: String,
-    password: String
-})
-
-const UsersModel = mongoose.model("users", UsersSchema)
-module.exports = UsersModel
+    password: String,
+  });
+  
+  // Use consistent collection name
+  module.exports = mongoose.model('User', UserSchema, 'users'); // all lowercase
