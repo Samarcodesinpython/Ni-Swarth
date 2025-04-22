@@ -1,0 +1,136 @@
+:root {
+    --primary: #8b5a2b;
+    --primary-dark: #5c3a21;
+    --text: #333333;
+    --text-light: #666666;
+    --background: #f9f5f0;
+    --section-bg: #ffffff;
+    --border: #d4b78f;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: var(--text);
+    background-color: var(--background);
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  /* Header */
+  .privacy-header {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: white;
+    padding: 80px 0;
+    text-align: center;
+  }
+  
+  .privacy-header h1 {
+    font-size: 42px;
+    margin-bottom: 15px;
+  }
+  
+  .effective-date {
+    font-size: 16px;
+    opacity: 0.9;
+    margin-bottom: 0;
+  }
+  
+  /* Main Content */
+  .privacy-content {
+    background-color: var(--section-bg);
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    padding: 50px;
+    margin: -40px auto 60px;
+    position: relative;
+  }
+  
+  .policy-section {
+    margin-bottom: 40px;
+  }
+  
+  .policy-section h2 {
+    color: var(--primary);
+    font-size: 28px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--border);
+  }
+  
+  .policy-section h3 {
+    color: var(--primary-dark);
+    font-size: 22px;
+    margin: 30px 0 15px;
+  }
+  
+  .policy-section p, .policy-section li {
+    color: var(--text-light);
+    margin-bottom: 15px;
+  }
+  
+  .policy-section ul {
+    padding-left: 20px;
+  }
+  
+  .policy-section li {
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 20px;
+  }
+  
+  .policy-section li:before {
+    content: "•";
+    color: var(--primary);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+  }
+  
+  /* Highlight Box */
+  .highlight-box {
+    background-color: rgba(139, 90, 43, 0.08);
+    border-left: 4px solid var(--primary);
+    padding: 20px;
+    margin: 30px 0;
+    border-radius: 0 4px 4px 0;
+  }
+  
+  /* Footer */
+  .privacy-footer {
+    text-align: center;
+    padding: 30px 0;
+    background-color: var(--primary-dark);
+    color: white;
+  }
+  
+  .privacy-footer a {
+    color: white;
+    text-decoration: underline;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .privacy-content {
+      padding: 30px 20px;
+      margin: -20px auto 40px;
+    }
+    
+    .privacy-header {
+      padding: 60px 0;
+    }
+    
+    .privacy-header h1 {
+      font-size: 32px;
+    }
+    
+    .policy-section h2 {
+      font-size: 24px;
+    }
+  }
