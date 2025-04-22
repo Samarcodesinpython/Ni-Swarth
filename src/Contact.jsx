@@ -1,11 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Contact.css';
 
 const Contact = () => {
   return (
-    <div>
-      <header>
-        <div className="logo">Ni-Swarth</div>
+    <div className="contact-page">
+      <header className="contact-header">
+        <div className="contact-logo">Ni-Swarth</div>
       </header>
 
       <div className="contact-form">
@@ -16,17 +17,17 @@ const Contact = () => {
           <input type="text" name="name" placeholder="Your Name" required />
           <input type="email" name="email" placeholder="Your Email" required />
           <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-          
+
           <div className="form-actions">
-            <a href="dashboard.html" className="back-home-btn">
+            <Link to="/" className="back-home-btn">
               <i className="fas fa-home"></i> Back to Home
-            </a>
+            </Link>
             <button type="submit">Submit</button>
           </div>
         </form>
       </div>
 
-      <footer>
+      <footer className="contact-footer">
         <p>© 2025 Ni-Swarth. All rights reserved.</p>
       </footer>
     </div>
