@@ -1,3 +1,5 @@
+//Ni-Swarth/src/Structure.jsx
+
 import React, { useState } from 'react';
 import './Structure.css'; // Import your CSS file
 
