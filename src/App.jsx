@@ -27,6 +27,7 @@ function App() {
         <Route path="/registerngo" element={<Registerngo />} />
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/solution" element={<Solution />} />
+        <Route path="/team" element={<Team />} />
         
         {/* Protected Dashboard */}
         <Route
