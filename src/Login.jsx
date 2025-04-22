@@ -7,13 +7,15 @@ import { Link, useNavigate } from 'react-router-dom';
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState(''); // State for displaying client-side errors
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setError(''); // Clear any previous errors
 
     if (!email || !password) {
-      alert("Please enter email and password");
+      setError("Please enter both email and password.");
       return;
     }
 
@@ -29,8 +31,8 @@ function Login() {
       navigate('/dashboard'); // Replace with your actual dashboard route
 
     } catch (err) {
-      console.error(err);
-      alert(err.response?.data?.error || "Login failed");
+      console.error("Login error:", err);
+      setError(err.response?.data?.message || "Login failed. Please check your credentials."); // Display server error or a generic message
     }
   };
 
@@ -38,6 +40,7 @@ function Login() {
     <div className="d-flex justify-content-center align-items-center bg-secondary vh-100">
       <div className="bg-white p-3 rounded w-25">
         <h2>Login</h2>
+        {error && <div className="alert alert-danger">{error}</div>} {/* Display error message */}
         <form onSubmit={handleSubmit}>
           <div className="mb-3">
             <label htmlFor="email"><strong>Email</strong></label>
@@ -47,6 +50,7 @@ function Login() {
               autoComplete="off"
               name="email"
               className="form-control rounded-0"
+              value={email} // Bind value to state
               onChange={(e) => setEmail(e.target.value)}
               required
             />
@@ -58,6 +62,7 @@ function Login() {
               placeholder="Enter Password"
               name="password"
               className="form-control rounded-0"
+              value={password} // Bind value to state
               onChange={(e) => setPassword(e.target.value)}
               required
             />
