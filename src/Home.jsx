@@ -36,6 +36,7 @@ function Home() {
     <div>
       <header>
         <div className="container">
+<<<<<<< Updated upstream
         <nav>
   <div className="logo">Ni-Swarth</div>
   <ul className="nav-links">
@@ -63,6 +64,34 @@ function Home() {
   </ul>
 </nav>
 
+=======
+          <nav>
+            <div className="logo">Ni-Swarth</div>
+            <ul className="nav-links">
+              <li><Link to="/">Home</Link></li>
+              <li><Link to="/about">About</Link></li>
+              <li><Link to="/solution">Solution</Link></li>
+              <li><Link to="/impact">Impact</Link></li>
+              <li><Link to="/team">Team</Link></li>
+              <li className="dropdown">
+                <a href="#">NGOs</a>
+                <div className="dropdown-content">
+                  <Link to="/browse-ngos">Browse NGOs</Link>
+                  <Link to="/registerngo">Register NGO</Link>
+                  <a href="/partner.html" target="_blank">Partner With Us</a>
+                </div>
+              </li>
+              <li className="dropdown">
+                <a href="#">Donor</a>
+                <div className="dropdown-content">
+                  <Link to="/upload-image">Upload an image</Link>
+                  <Link to="/monetary-fund">Monetary Fund</Link>
+                  <Link to="/donation-history">Donation History</Link>
+                </div>
+              </li>
+            </ul>
+          </nav>
+>>>>>>> Stashed changes
         </div>
       </header>
 

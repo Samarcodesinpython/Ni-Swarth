@@ -1,35 +1,35 @@
-// Ni-Swarth/src/App.jsx
-
 import { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Signup from './Signup';
-import Login from './login';
-import Dashboard from './Dashboard'; // ✅ import your dashboard
-import ProtectedRoute from './ProtectedRoute';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Home from './Home'; // ✅ Import the Home component
+import Signup from './Signup';
+import Login from './Login'; // Fixed casing to match your file
+import Dashboard from './Dashboard';
+import ProtectedRoute from './ProtectedRoute';
+import Home from './Home';
 import About from './About';
 import Contact from './Contact';
-
+import Impact from './Impact'; 
+import Registerngo from './Registerngo';
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         {/* Public Routes */}
-        <Route path="/" element={<Home />} /> {/* ✅ Home is the landing page */}
-        <Route path="/signup" element={<Signup />} /> {/* ✅ Route for Signup */}
-        <Route path="/login" element={<Login />} />   {/* ✅ Route for Login */}
+        <Route path="/" element={<Home />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />   {/* ✅ Route for Contact */}
-
-
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/impact" element={<Impact />} /> {/* Added Impact route */}
+        <Route path="/registerngo" element={<Registerngo />} />
+        
         {/* Protected Dashboard */}
         <Route
           path="/dashboard"
           element={
             <ProtectedRoute>
-              <Dashboard /> {/* ✅ Protected dashboard route */}
+              <Dashboard />
             </ProtectedRoute>
           }
         />
