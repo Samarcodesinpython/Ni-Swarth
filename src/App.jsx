@@ -11,6 +11,7 @@ import Contact from './Contact';
 import Impact from './Impact'; 
 import Registerngo from './Registerngo';
 import Privacy from './Privacy';
+import Solution from './Solution';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path="/impact" element={<Impact />} /> 
         <Route path="/registerngo" element={<Registerngo />} />
         <Route path="/privacy" element={<Privacy />} />
+        <Route path="/solution" element={<Solution />} />
         
         {/* Protected Dashboard */}
         <Route
