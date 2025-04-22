@@ -8,6 +8,7 @@ import Dashboard from './Dashboard'; // ✅ import your dashboard
 import ProtectedRoute from './ProtectedRoute';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './Home'; // ✅ Import the Home component
+import About from './About';
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route path="/" element={<Home />} /> {/* ✅ Home is the landing page */}
         <Route path="/signup" element={<Signup />} /> {/* ✅ Route for Signup */}
         <Route path="/login" element={<Login />} />   {/* ✅ Route for Login */}
+        <Route path="/about" element={<About />} />
 
         {/* Protected Dashboard */}
         <Route

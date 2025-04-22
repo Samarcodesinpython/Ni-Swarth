@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+
 import './Home.css';
 
 function Home() {
   useEffect(() => {
-    // Scroll reveal animation
     const revealOnScroll = () => {
       const sections = document.querySelectorAll('section');
       sections.forEach(section => {
@@ -16,9 +17,8 @@ function Home() {
 
     window.addEventListener('scroll', revealOnScroll);
     window.addEventListener('load', revealOnScroll);
-    revealOnScroll(); // Initial check
+    revealOnScroll();
 
-    // Cleanup on unmount
     return () => {
       window.removeEventListener('scroll', revealOnScroll);
       window.removeEventListener('load', revealOnScroll);
@@ -26,7 +26,6 @@ function Home() {
   }, []);
 
   useEffect(() => {
-    // Mobile video pause logic
     if (/Mobi|Android/i.test(navigator.userAgent)) {
       const vid = document.getElementById('heroVideo');
       if (vid) vid.pause();
@@ -40,25 +39,25 @@ function Home() {
           <nav>
             <div className="logo">Ni-Swarth</div>
             <ul className="nav-links">
-              <li><a href="#">Home</a></li>
-              <li><a href="about.html">About</a></li>
-              <li><a href="solution.html">Solution</a></li>
-              <li><a href="impact.html">Impact</a></li>
-              <li><a href="team.html">Team</a></li>
+              <li><Link to="/">Home</Link></li>
+              <li><Link to="/about">About</Link></li>
+              <li><Link to="/solution">Solution</Link></li>
+              <li><Link to="/impact">Impact</Link></li>
+              <li><Link to="/team">Team</Link></li>
               <li className="dropdown">
                 <a href="#">NGOs</a>
                 <div className="dropdown-content">
-                  <a href="#">Browse NGOs</a>
-                  <a href="register-ngo.html">Register NGO</a>
-                  <a href="partner.html" target="_blank">Partner With Us</a>
+                  <Link to="/browse-ngos">Browse NGOs</Link>
+                  <Link to="/register-ngo">Register NGO</Link>
+                  <a href="/partner.html" target="_blank">Partner With Us</a>
                 </div>
               </li>
               <li className="dropdown">
                 <a href="#">Donor</a>
                 <div className="dropdown-content">
-                  <a href="#">Upload an image</a>
-                  <a href="#">Monetary Fund</a>
-                  <a href="#">Donation History</a>
+                  <Link to="/upload-image">Upload an image</Link>
+                  <Link to="/monetary-fund">Monetary Fund</Link>
+                  <Link to="/donation-history">Donation History</Link>
                 </div>
               </li>
             </ul>
@@ -77,9 +76,9 @@ function Home() {
       <footer>
         <div className="container">
           <ul className="footer-links">
-            <li><a href="#">Privacy</a></li>
-            <li><a href="#">Terms</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><Link to="/privacy">Privacy</Link></li>
+            <li><Link to="/terms">Terms</Link></li>
+            <li><Link to="/contact">Contact</Link></li>
           </ul>
           <p>© 2025 Ni-Swarth. All rights reserved. 🌍</p>
         </div>

@@ -1,0 +1,81 @@
+.about-page {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                url('https://media.istockphoto.com/id/1498170916/photo/a-couple-is-taking-a-bag-of-food-at-the-food-and-clothes-bank.jpg?s=612x612&w=0&k=20&c=0fnD_g46lvoZ5NdzX5zYOSM4PzM95ezfs5uMe9D1QKs=');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    padding: 60px 0;
+  }
+  
+  .about-page .container {
+    max-width: 800px;
+    margin: auto;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+  }
+  
+  .about-page h1 {
+    color: #2b7a78;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .about-page p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #333;
+  }
+  
+  .about-page .video-link {
+    display: block;
+    text-align: center;
+    margin: 40px 0;
+    font-size: 1.2rem;
+  }
+  
+  .about-page .image-row {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 30px 0;
+    flex-wrap: wrap;
+  }
+  
+  .about-page .oval-image {
+    width: 150px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #2b7a78;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  .about-page .oval-image:hover {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+  }
+  
+  .about-page a.back-link {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    color: #2b7a78;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .about-page a.back-link:hover {
+    text-decoration: underline;
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  

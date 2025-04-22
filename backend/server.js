@@ -2,37 +2,30 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import cors from 'cors';
 import mongoose from 'mongoose';
-import dotenv from 'dotenv'; // Import dotenv
-import jwt from 'jsonwebtoken';  // Import jsonwebtoken
-import bcrypt from 'bcryptjs'; // Import bcryptjs
-import UserModel from './models/User.js'; // Import the User model
-
-// Load environment variables from .env file
+import dotenv from 'dotenv'; 
+import jwt from 'jsonwebtoken';  
+import bcrypt from 'bcryptjs'; 
+import UserModel from './models/User.js'; 
 dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 5000;
 const JWT_SECRET = process.env.JWT_SECRET || "NiSwarthSecretKey";  // Use a default if not in .env
 
-// Connect to MongoDB
 const connectDB = async () => {
     try {
         await mongoose.connect(process.env.MONGODB_URI);
         console.log('MongoDB connected');
     } catch (error) {
         console.error('MongoDB connection error:', error);
-        process.exit(1); // Exit on connection error
+        process.exit(1); 
     }
 };
 connectDB();
 
-// Middleware
 app.use(cors());
-app.use(express.json()); // Use express.json() instead of bodyParser.json()
+app.use(express.json()); 
 
-// --- Authentication Routes (Consolidated from index.cjs) ---
-
-// Helper function for JWT verification (ESM version)
 const verifyToken = (req, res, next) => {
     const token = req.header('Authorization');
     if (!token) return res.status(401).json({ message: 'Access Denied' });
@@ -51,7 +44,6 @@ app.post('/auth/register', async (req, res) => {
     try {
         const { name, email, password, role } = req.body;
 
-        // Check if email already exists
         const emailExist = await UserModel.findOne({ email });
         if (emailExist) {
             return res.status(400).json({ message: 'Email already exists' });
@@ -119,11 +111,9 @@ app.get('/auth/profile', verifyToken, async (req, res) => {
     }
 });
 
-// --- Donation Routes (from backend/server.js) ---
 import donationRoutes from './routes/donationRoutes.js';  // Import donation routes
 app.use('/donations', donationRoutes); // Use the donation routes
 
-// --- Start the server ---
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
