@@ -36,5 +36,18 @@
     "globals": "^16.0.0",
     "nodemon": "^3.1.9",
     "vite": "^6.3.1"
-  }
+  },
+  "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
+  "main": "eslint.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Samarcodesinpython/Ni-Swarth.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Samarcodesinpython/Ni-Swarth/issues"
+  },
+  "homepage": "https://github.com/Samarcodesinpython/Ni-Swarth#readme"
 }

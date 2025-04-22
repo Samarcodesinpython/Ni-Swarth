@@ -44,6 +44,11 @@ function Home() {
               <li><Link to="/solution">Solution</Link></li>
               <li><Link to="/impact">Impact</Link></li>
               <li><Link to="/team">Team</Link></li>
+              <li><a href="#">Home</a></li>
+              <li><Link to="/about">About</Link></li>
+              <li><a href="solution.html">Solution</a></li>
+              <li><a href="impact.html">Impact</a></li>
+              <li><a href="team.html">Team</a></li>
               <li className="dropdown">
                 <a href="#">NGOs</a>
                 <div className="dropdown-content">

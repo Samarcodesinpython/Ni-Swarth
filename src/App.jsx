@@ -9,6 +9,7 @@ import ProtectedRoute from './ProtectedRoute';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './Home'; // ✅ Import the Home component
 import About from './About';
+import Contact from './Contact';
 
 
 function App() {
@@ -20,6 +21,8 @@ function App() {
         <Route path="/signup" element={<Signup />} /> {/* ✅ Route for Signup */}
         <Route path="/login" element={<Login />} />   {/* ✅ Route for Login */}
         <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />   {/* ✅ Route for Contact */}
+
 
         {/* Protected Dashboard */}
         <Route
