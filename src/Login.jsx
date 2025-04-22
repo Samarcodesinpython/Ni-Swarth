@@ -1,10 +1,10 @@
-// Ni-Swarth/src/Login.jsx
+// Ni-Swarth/src/login.jsx
 
 import React, { useState } from 'react';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 
-function Login() {
+function login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState(''); // State for displaying client-side errors
@@ -80,4 +80,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default login;

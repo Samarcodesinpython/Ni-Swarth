@@ -46,7 +46,7 @@ const verifyToken = (req, res, next) => {
     }
 };
 
-// User Registration Route (from index.cjs, adapted to ESM)
+
 app.post('/auth/register', async (req, res) => {
     try {
         const { name, email, password, role } = req.body;

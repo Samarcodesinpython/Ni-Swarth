@@ -1,80 +1,81 @@
-import React from 'react';
-import './Home.css'; // Import the CSS file
-import { Link } from 'react-router-dom'; // Import the Link component
+import React, { useEffect } from 'react';
+import './Home.css';
 
 function Home() {
+  useEffect(() => {
+    // Scroll reveal animation
+    const revealOnScroll = () => {
+      const sections = document.querySelectorAll('section');
+      sections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+          section.classList.add('reveal');
+        }
+      });
+    };
+
+    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('load', revealOnScroll);
+    revealOnScroll(); // Initial check
+
+    // Cleanup on unmount
+    return () => {
+      window.removeEventListener('scroll', revealOnScroll);
+      window.removeEventListener('load', revealOnScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    // Mobile video pause logic
+    if (/Mobi|Android/i.test(navigator.userAgent)) {
+      const vid = document.getElementById('heroVideo');
+      if (vid) vid.pause();
+    }
+  }, []);
+
   return (
-    <div className="home-container">
-      <header className="home-header">
-        <div className="home-nav">
-          <div className="home-logo">Ni-Swarth</div>
-          <ul className="home-nav-links">
-            <li><Link to="/">Home</Link></li> {/* Use Link for Home */}
-            <li><Link to="/about">About</Link></li> {/* Use Link for About */}
-            <li><a href="#solution">Solution</a></li>
-            <li><a href="#impact">Impact</a></li>
-            <li><a href="#team">Team</a></li>
-            <li className="dropdown">
-              <Link to="/ngos">NGOs</Link> {/* Use Link for NGOs - adjust the path if needed */}
-              <div className="dropdown-content">
-                <Link to="/ngos/browse">Browse NGOs</Link> {/* Use Link */}
-                <Link to="/ngos/register">Register NGO</Link> {/* Use Link */}
-                <Link to="/ngos/partner">Partner With Us</Link> {/* Use Link */}
-              </div>
-            </li>
-            <li className="dropdown">
-              <Link to="/donor">Donor</Link> {/* Use Link for Donor - adjust the path if needed */}
-              <div className="dropdown-content">
-                <Link to="/donor/upload">Upload an image</Link> {/* Use Link */}
-                <Link to="/donor/fund">Monetary Fund</Link> {/* Use Link */}
-                <Link to="/donor/history">Donation History</Link> {/* Use Link */}
-              </div>
-            </li>
-            <li><Link to="/signup">Sign up/Login</Link></li> {/* Use Link for Sign up/Login */}
-          </ul>
+    <div>
+      <header>
+        <div className="container">
+          <nav>
+            <div className="logo">Ni-Swarth</div>
+            <ul className="nav-links">
+              <li><a href="#">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="solution.html">Solution</a></li>
+              <li><a href="impact.html">Impact</a></li>
+              <li><a href="team.html">Team</a></li>
+              <li className="dropdown">
+                <a href="#">NGOs</a>
+                <div className="dropdown-content">
+                  <a href="#">Browse NGOs</a>
+                  <a href="register-ngo.html">Register NGO</a>
+                  <a href="partner.html" target="_blank">Partner With Us</a>
+                </div>
+              </li>
+              <li className="dropdown">
+                <a href="#">Donor</a>
+                <div className="dropdown-content">
+                  <a href="#">Upload an image</a>
+                  <a href="#">Monetary Fund</a>
+                  <a href="#">Donation History</a>
+                </div>
+              </li>
+            </ul>
+          </nav>
         </div>
       </header>
 
-      <section className="home-hero">
-        <div className="hero-image-overlay"></div>
-        <div className="hero-content">
+      <section className="hero" id="home">
+        <div className="container" style={{ position: "relative", zIndex: 1 }}>
           <h1>Welcome to Ni-Swarth</h1>
-          <p className="hero-tagline">A PLATFORM FOR CHANGE, A COMMUNITY FOR GROWTH 🌱</p>
+          <div className="tagline">A PLATFORM FOR CHANGE, A COMMUNITY FOR GROWTH 🌱</div>
           <p>Empowering communities with AI-driven donations to create meaningful social impact.</p>
-          <a href="#" className="hero-cta-button">Donate Now ❤️</a>
         </div>
       </section>
 
-      <section id="about" className="home-section">
-        <h2 className="section-title">About 🤝</h2>
-        <p className="section-text">Ni-Swarth is a donation platform integrating AI to match resources with NGO needs, verify legitimacy, and ensure transparency in every contribution.</p>
-        <p><Link to="/about" className="learn-more-link">Learn More →</Link></p> {/* Optional: "Learn More" link */}
-      </section>
-
-      <section id="solution" className="home-section">
-        <h2 className="section-title">Our Solution ♻️</h2>
-        <p className="section-text">With AI recommendations, image verification, and smart dashboards, we revolutionize how donations reach those who need them most.</p>
-      </section>
-
-      <section id="impact" className="home-section">
-        <h2 className="section-title">Impact 🏘️</h2>
-        <p className="section-text">Ni-Swarth bridges donors and communities, reduces wastage, and builds lasting collaborations between stakeholders.</p>
-      </section>
-
-      <section id="team" className="home-section">
-        <h2 className="section-title">Meet the Team 🧑‍💼</h2>
-        <div className="team-members">
-          <div className="team-member"><h3>Samar Jamal</h3></div>
-          <div className="team-member"><h3>Harshita Pokhariya</h3></div>
-          <div className="team-member"><h3>Jigansa Satapathy</h3></div>
-          <div className="team-member"><h3>Kushagra Dobhal</h3></div>
-          <div className="team-member"><h3>Shreya Bansal</h3></div>
-          <div className="team-member"><h3>Lavanya Kapoor</h3></div>
-        </div>
-      </section>
-
-      <footer className="home-footer">
-        <div className="footer-content">
+      <footer>
+        <div className="container">
           <ul className="footer-links">
             <li><a href="#">Privacy</a></li>
             <li><a href="#">Terms</a></li>
