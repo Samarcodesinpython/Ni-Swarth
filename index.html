@@ -3,11 +3,43 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet/dist/leaflet.css"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ni-Swarth</title>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+
+    <!-- Chatbot script -->
+    <script src='https://cdn.jotfor.ms/s/umd/latest/for-embedded-agent.js'></script>
+    <script>
+      window.addEventListener("DOMContentLoaded", function() {
+        window.AgentInitializer.init({
+          agentRenderURL: "https://agent.jotform.com/01965e04b84d7defa4a1ca7419325d2466b2",
+          rootId: "JotformAgent-01965e04b84d7defa4a1ca7419325d2466b2",
+          formID: "01965e04b84d7defa4a1ca7419325d2466b2",
+          queryParams: ["skipWelcome=1", "maximizable=1"],
+          domain: "https://www.jotform.com",
+          isDraggable: false,
+          background: "linear-gradient(180deg, #3A5800 0%, #3A5800 100%)",
+          buttonBackgroundColor: "#004BB6",
+          buttonIconColor: "#F8FEEC",
+          variant: false,
+          customizations: {
+            "greeting": "Yes",
+            "greetingMessage": "Hi! How can I assist you?",
+            "openByDefault": "No",
+            "pulse": "Yes",
+            "position": "right",
+            "autoOpenChatIn": "0"
+          },
+          isVoice: false,
+        });
+      });
+    </script>
   </body>
 </html>

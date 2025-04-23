@@ -1,0 +1,139 @@
+/* Term.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+.term-container {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #fdf6f0, #f5eee6);
+  color: #5c3c0d;
+  padding: 40px 20px;
+  max-width: 900px;
+  margin: auto;
+  background-color: #fffaf5;
+  padding: 50px 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+  animation: fadeIn 1.2s ease-out;
+  position: relative;
+}
+
+h1 {
+  color: #7c3a00;
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+  text-align: center;
+  position: relative;
+}
+
+h1::after {
+  content: '';
+  display: block;
+  height: 3px;
+  width: 80px;
+  background-color: #b45309;
+  margin: 12px auto 0;
+  border-radius: 4px;
+}
+
+h2 {
+  color: #8b4513;
+  font-size: 1.6rem;
+  margin-top: 40px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+}
+
+h2 i {
+  margin-right: 10px;
+  color: #a0522d;
+}
+
+p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 18px;
+  color: #5c3c0d;
+  transition: all 0.3s ease;
+}
+
+p:hover {
+  background: #f9f1e8;
+  padding-left: 8px;
+  border-left: 4px solid #d97706;
+  border-radius: 4px;
+}
+
+.centered {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.back-home-btn {
+  display: inline-block;
+  background: #b45309;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: 2px solid #b45309;
+  box-shadow: 0 4px 15px rgba(180, 83, 9, 0.2);
+}
+
+.back-home-btn:hover {
+  background: #8c3d00;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(180, 83, 9, 0.3);
+}
+
+.back-home-btn i {
+  margin-right: 8px;
+}
+
+footer {
+  margin-top: 50px;
+  text-align: center;
+  color: #7b341e;
+  font-size: 0.95rem;
+  background-color: #fdeedc;
+  padding: 20px 10px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(124, 58, 0, 0.1);
+}
+
+footer a {
+  color: #7b341e;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .term-container {
+    padding: 30px 20px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

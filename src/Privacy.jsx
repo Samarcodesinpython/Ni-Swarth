@@ -99,7 +99,7 @@ const Contact = () => {
       <footer className="privacy-footer">
         <div className="container">
           <p>© 2025 Ni-Swarth. All rights reserved.</p>
-          <p><Link to="/dashboard">Back to Home</Link></p>
+          <p><Link to="/">Back to Home</Link></p>
         </div>
       </footer>
     </div>

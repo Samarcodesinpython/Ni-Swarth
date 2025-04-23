@@ -7,12 +7,6 @@
     --white: #ffffff;
   }
   
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
   body {
     font-family: 'Inter', sans-serif;
     background-color: var(--beige-light);
@@ -20,31 +14,31 @@
     line-height: 1.6;
   }
   
-  .container {
+  .partnerContainer {
     width: 90%;
     max-width: 1200px;
     margin: auto;
   }
   
-  .partner-hero {
+  .partnerHero {
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-      url('https://static.wixstatic.com/media/8c8e4f_e42e46467fa64d4da8d8d4d7b80f305a~mv2.png') center/cover;
+                url('https://static.wixstatic.com/media/8c8e4f_e42e46467fa64d4da8d8d4d7b80f305a~mv2.png') center/cover;
     padding: 140px 0;
     text-align: center;
     color: var(--white);
   }
   
-  .partner-hero h1 {
+  .partnerHero h1 {
     font-size: 3rem;
     margin-bottom: 15px;
   }
   
-  .partner-hero p {
+  .partnerHero p {
     max-width: 700px;
     margin: 0 auto 30px;
   }
   
-  .btn {
+  .partnerBtn {
     display: inline-block;
     padding: 14px 28px;
     margin: 10px;
@@ -55,33 +49,33 @@
     border: 2px solid var(--white);
   }
   
-  .btn-primary {
+  .partnerBtnPrimary {
     background: var(--brown-medium);
     color: var(--white);
   }
   
-  .btn-primary:hover {
+  .partnerBtnPrimary:hover {
     background: #6b4423;
     transform: translateY(-2px);
   }
   
-  .btn-secondary {
+  .partnerBtnSecondary {
     background: transparent;
     color: var(--white);
   }
   
-  .btn-secondary:hover {
+  .partnerBtnSecondary:hover {
     background: rgba(255,255,255,0.1);
   }
   
-  .section-title {
+  .partnerSectionTitle {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 40px;
     position: relative;
   }
   
-  .section-title::after {
+  .partnerSectionTitle::after {
     content: '';
     display: block;
     width: 60px;
@@ -90,13 +84,13 @@
     margin: 10px auto 0;
   }
   
-  .options-grid, .benefits-grid {
+  .partnerGrid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
   }
   
-  .option-card, .benefit-item {
+  .partnerCard, .partnerBenefit {
     background: var(--white);
     border-radius: 10px;
     padding: 30px;
@@ -104,18 +98,18 @@
     box-shadow: 0 5px 15px rgba(0,0,0,0.05);
   }
   
-  .option-card:hover, .benefit-item:hover {
+  .partnerCard:hover, .partnerBenefit:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0,0,0,0.1);
   }
   
-  .card-icon, .benefit-icon {
+  .partnerIcon {
     font-size: 36px;
     margin-bottom: 20px;
     color: var(--brown-medium);
   }
   
-  .card-link {
+  .partnerLink {
     display: inline-block;
     margin-top: 10px;
     font-weight: 600;
@@ -123,57 +117,58 @@
     text-decoration: none;
   }
   
-  .card-link:hover {
+  .partnerLink:hover {
     text-decoration: underline;
   }
   
-  .stats {
+  .partnerStats {
     background: var(--white);
     text-align: center;
     padding: 60px 0;
   }
   
-  .stats-container {
+  .partnerStatsRow {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
   }
   
-  .stat-item {
+  .partnerStatItem {
     margin: 20px;
   }
   
-  .stat-number {
+  .partnerStatNumber {
     font-size: 2.5rem;
     font-weight: bold;
     color: var(--brown-medium);
   }
   
-  .partner-cta {
+  .partnerCta {
     background: linear-gradient(to right, var(--brown-medium), var(--brown-dark));
     color: var(--white);
     padding: 80px 0;
     text-align: center;
   }
   
-  .partner-cta p {
+  .partnerCta p {
     max-width: 700px;
     margin: auto auto 30px;
   }
   
-  footer {
+  .partnerFooter {
     background-color: var(--brown-dark);
     color: var(--white);
     padding: 40px 0 20px;
     text-align: center;
   }
   
-  footer a {
+  .partnerFooter a {
     color: var(--white);
     text-decoration: none;
     margin: 0 10px;
   }
   
-  footer a:hover {
+  .partnerFooter a:hover {
     text-decoration: underline;
   }
+  

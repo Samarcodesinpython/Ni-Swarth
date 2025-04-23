@@ -45,7 +45,7 @@ const Solution = () => {
       </div>
 
       {/* Smaller Back to Dashboard Button */}
-      <Link to="/dashboard" className="back-btn">Back to Dashboard</Link>
+      <Link to="/" className="back-btn">Back to Dashboard</Link>
     </div>
   );
 };
